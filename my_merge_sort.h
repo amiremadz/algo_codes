@@ -9,11 +9,6 @@
 #include <algorithm>
 #include <iterator>
 
-<<<<<<< HEAD
-using namespace std;
-=======
-
->>>>>>> added merge sort
 //alias - not needed in C++14
 template<typename ITR>
 using item_type = typename std::iterator_traits<ITR>::value_type;
@@ -29,11 +24,7 @@ template<typename ITR, class COMP = std::less<item_type<ITR>>>
     auto const middle = std::next(first, dist/2);
     my_merge_sort(first, middle, comp);
     my_merge_sort(middle, last, comp);
-<<<<<<< HEAD
-    inplace_merge(first, middle, last, comp); //YES!! its in-place merge !!
-=======
     std::inplace_merge(first, middle, last, comp); //YES!! its in-place merge !!
->>>>>>> added merge sort
   }
 
 
