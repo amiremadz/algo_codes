@@ -8,7 +8,6 @@
 #include <algorithm>
 #include <iterator>
 
-using namespace std;
 
 template<typename ITR>
 using item_type = typename std::iterator_traits<ITR>::value_type;
@@ -24,7 +23,7 @@ template <typename ITR, class COMP = std::less<item_type<ITR>>>
       // pivot - choose last element
       const auto pivot = next(first, dist - 1);
       // partition
-      auto pos = partition(first, last, [pivot, comp](const item_type<ITR>& item)
+      auto pos = std::partition(first, last, [pivot, comp](const item_type<ITR>& item)
     {return comp(item, *pivot);});
       //swap
       auto temp = *pos;
